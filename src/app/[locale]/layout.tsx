@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Web3Provider } from "@/components/web3-privoder";
 import { I18nProviderClient } from "@/locales/client";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,13 +18,18 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body>
-        <Web3Provider>
-          <I18nProviderClient locale={locale}>
-            {children}
-          </I18nProviderClient>
-        </Web3Provider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Web3Provider>
+            <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
+          </Web3Provider>
+        </ThemeProvider>
       </body>
     </html>
   );

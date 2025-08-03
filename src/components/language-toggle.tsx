@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/wed/button";
 import { LanguagesIcon } from "lucide-react";
 
-export const ToggleLanguage = () => {
+export const LanguageToggle = () => {
   const t = useScopedI18n("locale");
   const currentLocale = useCurrentLocale();
   const changeLocale = useChangeLocale({
@@ -25,14 +25,11 @@ export const ToggleLanguage = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="size-10">
           <LanguagesIcon className="!size-6" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        aria-label="Languages"
-        className="min-w-fit"
-      >
+      <DropdownMenuContent aria-label="Languages" className="min-w-fit">
         {LANGUAGES.map((locale) => (
           <DropdownMenuCheckboxItem
             key={locale}

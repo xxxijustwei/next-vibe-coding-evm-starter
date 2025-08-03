@@ -5,9 +5,10 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 ## ✨ Features
 
 - 🌐 **Multi-language Support** - Built-in internationalization (English & Chinese)
+- 🌙 **Dark/Light Theme** - System-aware theme switching with next-themes
 - 🔗 **Web3 Integration** - RainbowKit + Wagmi + Viem for seamless blockchain connectivity
 - 🎨 **Modern UI** - shadcn/ui components with Tailwind CSS v4 and OKLCH colors
-- ⚡ **Next.js 15** - Latest Next.js with React 19 and Turbopack for fast development
+- ⚡ **Next.js 15** - Latest Next.js with React 19 and Rspack for optimized builds
 - 🛠 **Developer Experience** - TypeScript, Biome, Husky, and lint-staged preconfigured
 - 📱 **Responsive Design** - Mobile-first approach with beautiful animations
 
@@ -15,8 +16,10 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 
 ### Frontend
 - **Framework:** [Next.js 15](https://nextjs.org/) with React 19
+- **Build Tool:** [Rspack](https://rspack.dev/) for optimized bundling
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com/) with [Radix UI](https://www.radix-ui.com/)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with OKLCH color system
+- **Theme Management:** [next-themes](https://github.com/pacocoursey/next-themes) for dark/light mode
 - **Icons:** [Lucide Icons](https://lucide.dev/)
 - **Animations:** [Motion](https://motion.dev/)
 
@@ -78,7 +81,8 @@ src/
 │       └── page.tsx       # Homepage with wallet connection
 ├── components/
 │   ├── ui/               # shadcn/ui components
-│   ├── toggle-language.tsx  # Language switcher
+│   ├── language-toggle.tsx  # Language switcher
+│   ├── mode-toggle.tsx      # Theme switcher (dark/light)
 │   └── web3-privoder.tsx    # Web3 context provider
 ├── hooks/
 │   └── use-ripple.ts     # Custom hooks
@@ -98,7 +102,7 @@ src/
 
 ## 🔧 Available Scripts
 
-- `bun dev` - Start development server with Turbopack
+- `bun dev` - Start development server
 - `bun build` - Build production bundle with format & lint
 - `bun start` - Start production server
 - `bun format` - Format code with Biome
