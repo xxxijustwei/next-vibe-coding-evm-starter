@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="absolute top-4 right-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <LanguageToggle />
           <ModeToggle />
           <ConnectButton showBalance={false} />

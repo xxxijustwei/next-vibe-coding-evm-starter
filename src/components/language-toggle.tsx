@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/wed/button";
-import { LanguagesIcon } from "lucide-react";
+import { EarthIcon } from "lucide-react";
 
 export const LanguageToggle = () => {
   const t = useScopedI18n("locale");
@@ -26,7 +26,7 @@ export const LanguageToggle = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="size-10">
-          <LanguagesIcon className="!size-6" />
+          <EarthIcon className="!size-6" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent aria-label="Languages" className="min-w-fit">
