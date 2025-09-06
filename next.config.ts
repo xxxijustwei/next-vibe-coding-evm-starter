@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     GIT_COMMIT: execSync("git rev-parse HEAD").toString().trim(),
     WALLET_CONNECT_PROJECT_ID: process.env.WALLET_CONNECT_PROJECT_ID,
   },
+  output: "standalone",
   serverExternalPackages: ["pino", "pino-pretty"],
   webpack: (config) => {
     config.externals.push("pino-pretty", "lokijs", "encoding");
