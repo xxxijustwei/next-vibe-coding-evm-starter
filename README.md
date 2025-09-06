@@ -22,6 +22,7 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 - **Theme Management:** [next-themes](https://github.com/pacocoursey/next-themes) for dark/light mode
 - **Icons:** [Lucide Icons](https://lucide.dev/)
 - **Animations:** [Motion](https://motion.dev/)
+- **Logging:** [Pino](https://github.com/pinojs/pino) + [Pino Pretty](https://github.com/pinojs/pino-pretty)
 
 ### Web3 & Blockchain
 - **Wallet Connection:** [RainbowKit](https://www.rainbowkit.com/)
