@@ -1,10 +1,13 @@
+import { execSync } from "node:child_process";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
   env: {
+    GIT_COMMIT: execSync("git rev-parse HEAD").toString().trim(),
     WALLET_CONNECT_PROJECT_ID: process.env.WALLET_CONNECT_PROJECT_ID,
   },
+  serverExternalPackages: ["pino", "pino-pretty"],
   webpack: (config) => {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
