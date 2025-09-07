@@ -92,5 +92,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Viem](https://viem.sh/) - Ethereum library for JavaScript
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [shadcn/ui](https://ui.shadcn.com/) - Beautiful and accessible components
-- [next-international](https://next-international.vercel.app/) - Type-safe internationalization
+- [next-intl](https://next-intl.dev/) - Internationalization for Next.js
 - [Biome](https://biomejs.dev/) - Fast toolchain for web projects
