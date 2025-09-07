@@ -3,10 +3,10 @@
 import { LanguageToggle } from "@/components/language-toggle";
 import { ModeToggle } from "@/components/mode-toggle";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useScopedI18n } from "@/locales";
+import { useTranslations } from "next-intl";
 
 const Page = () => {
-  const t = useScopedI18n("intro");
+  const t = useTranslations("intro");
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="absolute top-4 right-4">

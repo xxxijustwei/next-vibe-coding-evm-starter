@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { Web3Provider } from "@/components/web3-privoder";
-import { I18nProviderClient } from "@/locales/client";
+import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
+import { Web3Provider } from "@/components/web3-privoder";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +26,9 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Web3Provider>
-            <I18nProviderClient locale={locale}>{children}</I18nProviderClient>
-          </Web3Provider>
+          <NextIntlClientProvider>
+            <Web3Provider>{children}</Web3Provider>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
