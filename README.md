@@ -30,7 +30,7 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 - **State Management:** [TanStack Query](https://tanstack.com/query)
 
 ### Internationalization
-- **i18n Framework:** [next-international](https://next-international.vercel.app/)
+- **i18n Framework:** [next-intl](https://next-intl.dev/)
 - **Supported Languages:** English (en), Chinese (cn)
 - **Automatic Detection:** Browser language detection with fallback
 
