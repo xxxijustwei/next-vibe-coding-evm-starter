@@ -72,35 +72,6 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 5. **Open your browser:**
    Navigate to `http://localhost:3000`
 
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   └── [locale]/          # Internationalized routes
-│       ├── layout.tsx     # Root layout with Web3 providers
-│       └── page.tsx       # Homepage with wallet connection
-├── components/
-│   ├── ui/               # shadcn/ui components
-│   ├── language-toggle.tsx  # Language switcher
-│   ├── mode-toggle.tsx      # Theme switcher (dark/light)
-│   └── web3-privoder.tsx    # Web3 context provider
-├── hooks/
-│   └── use-ripple.ts     # Custom hooks
-├── lib/
-│   └── utils.ts          # Utility functions
-├── locales/
-│   ├── client.ts         # Client-side i18n
-│   ├── server.ts         # Server-side i18n
-│   ├── index.ts          # i18n configuration
-│   └── languages/        # Translation files
-│       ├── en-US.ts      # English translations
-│       └── zh-CN.ts      # Chinese translations
-├── styles/
-│   └── globals.css       # Global styles
-└── middleware.ts         # i18n middleware
-```
-
 ## 🔧 Available Scripts
 
 - `bun dev` - Start development server
