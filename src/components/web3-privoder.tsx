@@ -6,7 +6,6 @@ import {
   RainbowKitProvider,
   getDefaultConfig,
 } from "@rainbow-me/rainbowkit";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useLocale } from "next-intl";
 import { WagmiProvider } from "wagmi";
 import { mainnet } from "wagmi/chains";
@@ -18,18 +17,14 @@ const config = getDefaultConfig({
   ssr: true,
 });
 
-const queryClient = new QueryClient();
-
 export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
   const locale = useLocale();
 
   return (
     <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider modalSize="compact" locale={locale as Locale}>
-          {children}
-        </RainbowKitProvider>
-      </QueryClientProvider>
+      <RainbowKitProvider modalSize="compact" locale={locale as Locale}>
+        {children}
+      </RainbowKitProvider>
     </WagmiProvider>
   );
 };

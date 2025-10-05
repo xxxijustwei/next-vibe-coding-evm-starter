@@ -21,7 +21,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body>
         <ThemeProvider
-          attribute="class"
+          attribute={["class", "data-theme"]}
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
