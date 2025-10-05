@@ -10,7 +10,7 @@ import {
 import { useI18n } from "@/i18n/hook";
 import { LANGUAGES } from "@/i18n/routing";
 import { EarthIcon } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export const LanguageToggle = () => {
   const t = useTranslations("locale");
