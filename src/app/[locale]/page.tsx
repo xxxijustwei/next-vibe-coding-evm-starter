@@ -1,9 +1,9 @@
 "use client";
 
-import { LanguageToggle } from "@/components/language-toggle";
-import { ModeToggle } from "@/components/mode-toggle";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useTranslations } from "next-intl";
+import { LanguageToggle } from "@/components/language-toggle";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const Page = () => {
   const t = useTranslations("intro");
