@@ -2,18 +2,53 @@
 
 import "@rainbow-me/rainbowkit/styles.css";
 import {
-  getDefaultConfig,
+  connectorsForWallets,
   Locale,
   RainbowKitProvider,
 } from "@rainbow-me/rainbowkit";
+import {
+  binanceWallet,
+  injectedWallet,
+  metaMaskWallet,
+  okxWallet,
+  rainbowWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import { useLocale } from "next-intl";
-import { WagmiProvider } from "wagmi";
-import { mainnet } from "wagmi/chains";
+import { createConfig, http, WagmiProvider } from "wagmi";
+import { arbitrum, base, bsc, mainnet } from "wagmi/chains";
 
-const config = getDefaultConfig({
-  appName: "My vibe coding evm starter",
-  projectId: process.env.WALLET_CONNECT_PROJECT_ID ?? "",
-  chains: [mainnet],
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: "Recommended",
+      wallets:
+        typeof indexedDB !== "undefined"
+          ? [
+              metaMaskWallet,
+              rainbowWallet,
+              walletConnectWallet,
+              binanceWallet,
+              okxWallet,
+            ]
+          : [injectedWallet],
+    },
+  ],
+  {
+    appName: "Dapp",
+    projectId: process.env.WALLET_CONNECT_PROJECT_ID ?? "",
+  },
+);
+
+const config = createConfig({
+  connectors,
+  chains: [mainnet, bsc, arbitrum, base],
+  transports: {
+    [mainnet.id]: http(),
+    [bsc.id]: http(),
+    [arbitrum.id]: http(),
+    [base.id]: http(),
+  },
   ssr: true,
 });
 
@@ -22,7 +57,7 @@ export const Web3Provider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <WagmiProvider config={config}>
-      <RainbowKitProvider modalSize="compact" locale={locale as Locale}>
+      <RainbowKitProvider locale={locale as Locale}>
         {children}
       </RainbowKitProvider>
     </WagmiProvider>
