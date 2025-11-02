@@ -15,7 +15,7 @@ A modern and opinionated Next.js starter template for EVM-based Web3 application
 ## 🚀 Tech Stack
 
 ### Frontend
-- **Framework:** [Next.js 15](https://nextjs.org/) with React 19
+- **Framework:** [Next.js 16](https://nextjs.org/) with React 19
 - **Build Tool:** [Rspack](https://rspack.dev/) for optimized bundling
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com/) with [Radix UI](https://www.radix-ui.com/)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with OKLCH color system
